@@ -66,3 +66,10 @@ alias ls='ls --color'
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+# SHH-AGENT config
+eval $(ssh-agent -s) >/dev/null
+
+## TODO: This is a security breach, we have to check how to add a passphrase locally or what to do about it.
+## Probar KeyChain o gnome-keyring
+ssh-add ~/.ssh/id_ed25519 2>/dev/null
